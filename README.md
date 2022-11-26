@@ -14,6 +14,7 @@ npm install bootstrap jquery popper.js --save
 **import to index.js file**
 
 **import 'bootstarp/dist/css/bootstrap.min.css',**
+
 **import 'bootstrap/dist/js/boostrap.bundel.min'**
 
 *similary import jquery and popper.js*
@@ -25,6 +26,30 @@ React in use Material Ui
 ```
 nmp install @mui/material @emotion/react @emotion/styled
 ```
+### Add fortawesome icons ###
+```
+npm install --save-dev @fortawesome/fontawesome-free
+
+```
+* index.js file *
+
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
+then use icons
+
+```
+import React, { Component } from "react";
+
+class Fontawsome extends Component {
+  state = {};
+  render() {
+    return <i className="fas fa-heart"></i>;
+  }
+}
+
+export default Fontawsome;
+```
+
 # React-router-dom using Navigation
 ```
 npm install react-router-dom
