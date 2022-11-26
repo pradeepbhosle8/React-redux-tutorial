@@ -9,6 +9,7 @@ import Contact from './pages/Screens/Contact';
 import Faq from './pages/Screens/Faq';
 
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Singleproduct from './pages/Screens/Singleproduct';
 
 
 
@@ -25,6 +26,7 @@ function App() {
           <Route path='/about' element={<About />} />
           <Route path='/contact' element={<Contact />} />
           <Route path='/faq' element={<Faq />} />
+          <Route path='/product/:id' element={<Singleproduct />} />
           
         </Routes>
      </Router>
