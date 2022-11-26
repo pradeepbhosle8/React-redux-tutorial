@@ -23,7 +23,7 @@ import Popper from 'Popper.js';
 ```
 React in use Material Ui 
 ```
-***nmp install @mui/material @emotion/react @emotion/styled ***
+nmp install @mui/material @emotion/react @emotion/styled
 ```
 # React-router-dom using Navigation
 ```
@@ -32,7 +32,7 @@ npm install --save styled-components
 ```
 # in a app.js file
 *import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'; *
-* import all components using app
+* import all components using app*
 ```
    <>
       <Router>
