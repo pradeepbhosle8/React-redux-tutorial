@@ -1,9 +1,22 @@
 import React from 'react'
-import Products from '../../assets/api/Product'; 
+// import Products from '../../assets/api/Product'; 
 import Product from '../Screens/product';
-
+import axios from 'axios';
+import {useEffect, useState} from 'react'
 
 export default function Home() {
+
+    const [products, setproducts] = useState([]);
+    
+    useEffect(  () =>{
+       axios.get('https://fakestoreapi.com/products')
+           .then((res) => {
+            // console.log(res.data);
+            setproducts(res.data);
+           })
+           .catch(err => console.error(err))  
+    },[])
+
   return (
     <>
  
@@ -29,11 +42,16 @@ export default function Home() {
                 <div className="Rightsecton p-3 mb-4 mt-0 pt-2 row product" >
 
                   {
-                    Products.map((product, i)=>{
-                        return <Product product={product} key={i} />
-                    })
+                    products.length > 0  && (products.map((product, i)=>{
+                      return  <Product product={product} key={i} />
+                    }))
                   }
-					
+                  {/* {
+                    (products.length > 0 && products.map((product, i) => {
+                      return  <Product product={product} key={i} />
+                    }) )
+                  } */}
+                
 					
 
                 </div>  
