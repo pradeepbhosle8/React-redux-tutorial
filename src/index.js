@@ -11,10 +11,15 @@ import 'bootstrap/dist/js/bootstrap.bundle'
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import '../src/assets/css/style.css';
 
+import { Provider } from 'react-redux';
+import store from '../src/service/store';
+
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  
-    <App />
+    <Provider store={store}>
+      <App />
+    </Provider>
  
 );
 

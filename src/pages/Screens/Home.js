@@ -1,12 +1,17 @@
 import React from 'react'
 // import Products from '../../assets/api/Product'; 
 import Product from '../Screens/product';
+
 import axios from 'axios';
-import {useEffect, useState} from 'react'
+import { getAllProducts } from '../../service/action/productAction';
+import {useEffect, useState} from 'react';
+
+import { useDispatch } from 'react-redux';
 
 export default function Home() {
 
     const [products, setproducts] = useState([]);
+    const dispatch = useDispatch()
     
     useEffect(  () =>{
        axios.get('https://fakestoreapi.com/products')
@@ -15,6 +20,8 @@ export default function Home() {
             setproducts(res.data);
            })
            .catch(err => console.error(err))  
+
+           dispatch(getAllProducts())
     },[])
 
   return (
