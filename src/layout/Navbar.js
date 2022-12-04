@@ -1,7 +1,15 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
+import { useDispatch, useSelector } from 'react-redux';
+
+
+
 export default function Navbar() {
+
+  const addtocartReducer = useSelector(state => state.addToCartReducer)
+  const {cartItems} = addtocartReducer;
+
   return (
     <>
     <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
@@ -24,6 +32,9 @@ export default function Navbar() {
         <li className="nav-item">
           <Link className="nav-link active" aria-current="page" to="/contact">Contact</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link active" aria-current="page" to="/user">User Add</Link>
+        </li>
         
         
         
@@ -36,7 +47,7 @@ export default function Navbar() {
       </form>
 
       <button type="button" className="btn btn-info ms-3 border-light">
-        Cart <span className="badge text-bg-warning ms-2 border border-danger">4</span>
+        Cart <span className="badge text-bg-warning ms-2 border border-danger">{cartItems.length}</span>
         </button>
     </div>
   </div>

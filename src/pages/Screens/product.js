@@ -2,30 +2,30 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Rating from 'react-rating'
 
-export default function Product({ product, i }) {
+export default function Products({ products, i }) {
     return (
         <div className="col-xl-3 col-sm-6 mb-4 items" key={i}>
             <div className="custom-card shadow sm h-100">
 
 
                 <div className="custom-card-img">
-                    <Link to={`product/${product.id}`} >
-                        <img src={product.image} alt="" />
+                    <Link to={`product/${products.id}`} >
+                        <img src={products.image} alt="" />
                     </Link>
                 </div>
 
                 <div className="custom-card-body p-3">
                     <h6 className="mb-3 ">
-                        <Link to={`product/${product.id}`} className="text-secondary">{product.title}</Link>
+                        <Link to={`products/${products.id}`} className="text-secondary">{products.title}</Link>
                     </h6>
                     <p className="text-secondary  mb-2">
                         <i className="fas fa-tag"></i>
-                        <s>&#8377;{product.price}</s>
-                        <span className="fw-bold text-danger ms-3">&#8377;{product.price}</span>
+                        <s>&#8377;{products.price}</s>
+                        <span className="fw-bold text-danger ms-3">&#8377;{products.price}</span>
                     </p>
                     <p className="text-secondary">
 
-                        {product.description}
+                        {products.description}
                     </p>
 
 
@@ -34,15 +34,15 @@ export default function Product({ product, i }) {
                         <span className="rating-stars badge bg-warning text-dark ">
                         <Rating
                         style={{color:'red'}}
-                        initialRating={product.rating.rate}
+                        initialRating={products.rating.rate}
   emptySymbol="fa-regular  fa-star fa-fw fa-1x"
   fullSymbol="fa-solid fa-star fa-1x"
 />
-                            {product.rating.rate}
+                            {products.rating.rate}
                             <span className='ms-3'>Ratings</span>
 
                         </span>
-                        <span className='badge bg-warning text-dark'>{product.rating.count}</span>
+                        <span className='badge bg-warning text-dark'>{products.rating.count}</span>
 
 
                     </div>
